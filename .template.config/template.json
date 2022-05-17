@@ -1,0 +1,258 @@
+{
+    // samples: 
+    // https://github.com/dotnet/aspnetcore/blob/main/src/ProjectTemplates/Web.ProjectTemplates/content/ComponentsWebAssembly-CSharp/.template.config/template.json
+    // https://github.com/dotnet/dotnet-template-samples
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Humberto Cruz-Oyola jr.",
+    "name": "MAUI and Blazor WebAssembly Combined Template",
+
+    "generatorVersions": "[1.0.0.0-*)",
+    "description": "An empty project template for creating a Blazor application that has the appropriate Component Library, Shared Library, Blazor MAUI project, and Blazor Server project.",
+
+    "identity": "MauiBlazorWebTemplate",
+    "shortName": "maui-blazor-web",
+    "classifications": [ "Android", "Desktop", "iOS", "macOS", "Mobile", "Web", "Windows" ],
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+
+    "sourceName": "MauiBlazorWebTemplate",
+    "preferNameDirectory": true,
+
+    // From Blazor Template
+    "sources": [
+        {
+            "modifiers": [
+                // Can add conditions for including components, such as PWA, sync status, etc
+                {
+                    "condition": "(true)",
+                    "exclude": [
+                        ".vs/**",
+                        ".template.config/**",
+                        "Docs/**",
+                        "**/*.vspscc",
+                        "**/[Bb]in/**",
+                        "**/[Oo]bj/**",
+                        "**/*.filelist",
+                        "**/*.user",
+                        "**/*.lock.json",
+                        "**/.git/**",
+                        "**/*.nuspec"
+                    ]
+                }
+            ]
+        }
+    ],
+    "symbols": {
+        "skipRestore": {
+            "type": "parameter",
+            "datatype": "bool",
+            "description": "If specified, skips the automatic restore of the project on create.",
+            "defaultValue": "false"
+        },
+        /* Port Definitions */
+        // WASM Ports - IIS
+        "WasmIisHttpPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the IIS HTTP endpoint in launchSettings.json."
+        },
+        "WasmIisHttpsPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the IIS HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
+        },
+        // WASM Ports - Kestrel
+        "WasmHttpPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the HTTP endpoint in launchSettings.json."
+        },
+        "WasmHttpsPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
+        },
+        // ServerOnly Ports - IIS
+        "ServerIisHttpPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the Iis HTTP endpoint in launchSettings.json."
+        },
+        "ServerIisHttpsPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the Iis HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
+        },
+        // ServerOnly Ports - Kestrel
+        "ServerHttpPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the HTTP endpoint in launchSettings.json."
+        },
+        "ServerHttpsPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
+        },
+        /* Port Generators */
+        // WASM Port Generators - IIS
+        "WasmIisHttpPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 25201,
+                "high": 25299
+            }
+        },
+        "WasmIisHttpsPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 44301,
+                "high": 44399
+            }
+        },
+        // WASM Port Generators - Kestrel
+        "WasmHttpPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 5101,
+                "high": 5199
+            }
+        },
+        "WasmHttpsPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 7101,
+                "high": 7199
+            }
+        },
+        // Server Port Generators - IIS
+        "ServerIisHttpPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 7501,
+                "high": 7599
+            }
+        },
+        "ServerIisHttpsPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 44401,
+                "high": 44499
+            }
+        },
+        // Server Port Generators - Kestrel
+        "ServerHttpPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 5001,
+                "high": 5099
+            }
+        },
+        "ServerHttpsPortGenerator": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+                "low": 7001,
+                "high": 7099
+            }
+        },
+        /* Port Replacers */
+        // WASM Port Replacer
+        "WasmIisHttpPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "WasmIisHttpPort",
+                "fallbackVariableName": "WasmIisHttpPortGenerator"
+            },
+            "replaces": "9970"
+        },
+        "WasmIisHttpsPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "WasmIisHttpsPort",
+                "fallbackVariableName": "WasmIisHttpsPortGenerator"
+            },
+            "replaces": "98700"
+        },
+        "WasmHttpPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "WasmHttpPort",
+                "fallbackVariableName": "WasmHttpPortGenerator"
+            },
+            "replaces": "9960"
+        },
+        "WasmHttpsPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "WasmHttpsPort",
+                "fallbackVariableName": "WasmHttpsPortGenerator"
+            },
+            "replaces": "98600"
+        },
+        // Server Port Replacer
+        "ServerIisHttpPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "ServerIisHttpPort",
+                "fallbackVariableName": "ServerIisHttpPortGenerator"
+            },
+            "replaces": "9990"
+        },
+        "ServerIisHttpsPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "ServerIisHttpsPort",
+                "fallbackVariableName": "ServerIisHttpsPortGenerator"
+            },
+            "replaces": "98900"
+        },
+        "ServerHttpPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "ServerHttpPort",
+                "fallbackVariableName": "ServerHttpPortGenerator"
+            },
+            "replaces": "9980"
+        },
+        "ServerHttpsPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "ServerHttpsPort",
+                "fallbackVariableName": "ServerHttpsPortGenerator"
+            },
+            "replaces": "98800"
+        }
+    },
+    "defaultName": "WebApplication",
+    "postActions": [
+        {
+            "condition": "(!skipRestore)",
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [
+                {
+                    "text": "Run 'dotnet restore'"
+                }
+            ],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        }
+    ]
+}
