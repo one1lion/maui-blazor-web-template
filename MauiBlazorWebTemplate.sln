@@ -8,6 +8,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorWebTemplate.Ui", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorWebTemplate.Shared", "MauiBlazorWebTemplate.Shared\MauiBlazorWebTemplate.Shared.csproj", "{29881064-DBD3-4DC5-B981-DBBE486A1B02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorWebTemplate.ServerOnly", "MauiBlazorWebTemplate.ServerOnly\MauiBlazorWebTemplate.ServerOnly.csproj", "{BC681AE3-54FB-4788-AFCF-9014D2C9B102}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MAUI", "MAUI", "{E2D01FC6-8167-45F3-ADE5-1EFDE77107E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C92033BF-4A0C-43C0-9BA7-7EE0E77A6D14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{D8D83972-27FD-426C-AEDA-720FF3DF11CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorWebTemplate.Wasm", "MauiBlazorWebTemplate.Wasm\MauiBlazorWebTemplate.Wasm.csproj", "{91694FE3-CABF-42D6-A38A-0442BCE3D8E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +38,24 @@ Global
 		{29881064-DBD3-4DC5-B981-DBBE486A1B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29881064-DBD3-4DC5-B981-DBBE486A1B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29881064-DBD3-4DC5-B981-DBBE486A1B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC681AE3-54FB-4788-AFCF-9014D2C9B102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC681AE3-54FB-4788-AFCF-9014D2C9B102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC681AE3-54FB-4788-AFCF-9014D2C9B102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC681AE3-54FB-4788-AFCF-9014D2C9B102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91694FE3-CABF-42D6-A38A-0442BCE3D8E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91694FE3-CABF-42D6-A38A-0442BCE3D8E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91694FE3-CABF-42D6-A38A-0442BCE3D8E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91694FE3-CABF-42D6-A38A-0442BCE3D8E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98941797-FCBD-44D7-923C-AD8354C12C64} = {E2D01FC6-8167-45F3-ADE5-1EFDE77107E0}
+		{0E748F83-B3BC-4D60-AE30-76BD3279B631} = {D8D83972-27FD-426C-AEDA-720FF3DF11CC}
+		{29881064-DBD3-4DC5-B981-DBBE486A1B02} = {D8D83972-27FD-426C-AEDA-720FF3DF11CC}
+		{BC681AE3-54FB-4788-AFCF-9014D2C9B102} = {C92033BF-4A0C-43C0-9BA7-7EE0E77A6D14}
+		{91694FE3-CABF-42D6-A38A-0442BCE3D8E8} = {C92033BF-4A0C-43C0-9BA7-7EE0E77A6D14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
