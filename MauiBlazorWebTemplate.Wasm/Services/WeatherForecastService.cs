@@ -13,8 +13,8 @@ public class WeatherForecastService : IWeatherForecastService
         _httpClient = httpClient;
     }
 
-    public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+    public async Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
     {
-        return _httpClient.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        return (await _httpClient.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json")) ?? Array.Empty<WeatherForecast>();
     }
 }

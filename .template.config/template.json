@@ -4,7 +4,7 @@
     // https://github.com/dotnet/dotnet-template-samples
     "$schema": "http://json.schemastore.org/template",
     "author": "Humberto Cruz-Oyola jr.",
-    "name": "MAUI and Blazor WebAssembly Combined Template",
+    "name": "MAUI and Blazor Web Combined Template",
 
     "generatorVersions": "[1.0.0.0-*)",
     "description": "An empty project template for creating a Blazor application that has the appropriate Component Library, Shared Library, Blazor MAUI project, and Blazor Server project.",
@@ -50,51 +50,6 @@
             "datatype": "bool",
             "description": "If specified, skips the automatic restore of the project on create.",
             "defaultValue": "false"
-        },
-        /* Port Definitions */
-        // WASM Ports - IIS
-        "WasmIisHttpPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the IIS HTTP endpoint in launchSettings.json."
-        },
-        "WasmIisHttpsPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the IIS HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
-        },
-        // WASM Ports - Kestrel
-        "WasmHttpPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the HTTP endpoint in launchSettings.json."
-        },
-        "WasmHttpsPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
-        },
-        // ServerOnly Ports - IIS
-        "ServerIisHttpPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the Iis HTTP endpoint in launchSettings.json."
-        },
-        "ServerIisHttpsPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the Iis HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
-        },
-        // ServerOnly Ports - Kestrel
-        "ServerHttpPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the HTTP endpoint in launchSettings.json."
-        },
-        "ServerHttpsPort": {
-            "type": "parameter",
-            "datatype": "integer",
-            "description": "Port number to use for the HTTPS endpoint in launchSettings.json. This option is only applicable when the parameter no-https is not used (no-https will be ignored if either IndividualAuth or OrganizationalAuth is used)."
         },
         /* Port Generators */
         // WASM Port Generators - IIS
@@ -171,7 +126,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "WasmIisHttpPort",
+                "sourceVariableName": "WasmIisHttpPortGenerator",
                 "fallbackVariableName": "WasmIisHttpPortGenerator"
             },
             "replaces": "9970"
@@ -180,7 +135,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "WasmIisHttpsPort",
+                "sourceVariableName": "WasmIisHttpsPortGenerator",
                 "fallbackVariableName": "WasmIisHttpsPortGenerator"
             },
             "replaces": "98700"
@@ -189,7 +144,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "WasmHttpPort",
+                "sourceVariableName": "WasmHttpPortGenerator",
                 "fallbackVariableName": "WasmHttpPortGenerator"
             },
             "replaces": "9960"
@@ -198,7 +153,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "WasmHttpsPort",
+                "sourceVariableName": "WasmHttpsPortGenerator",
                 "fallbackVariableName": "WasmHttpsPortGenerator"
             },
             "replaces": "98600"
@@ -208,7 +163,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "ServerIisHttpPort",
+                "sourceVariableName": "ServerIisHttpPortGenerator",
                 "fallbackVariableName": "ServerIisHttpPortGenerator"
             },
             "replaces": "9990"
@@ -217,7 +172,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "ServerIisHttpsPort",
+                "sourceVariableName": "ServerIisHttpsPortGenerator",
                 "fallbackVariableName": "ServerIisHttpsPortGenerator"
             },
             "replaces": "98900"
@@ -226,7 +181,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "ServerHttpPort",
+                "sourceVariableName": "ServerHttpPortGenerator",
                 "fallbackVariableName": "ServerHttpPortGenerator"
             },
             "replaces": "9980"
@@ -235,7 +190,7 @@
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-                "sourceVariableName": "ServerHttpsPort",
+                "sourceVariableName": "ServerHttpsPortGenerator",
                 "fallbackVariableName": "ServerHttpsPortGenerator"
             },
             "replaces": "98800"
