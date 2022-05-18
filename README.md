@@ -22,7 +22,7 @@ Use the DotNET CLI to install the template. First, navigate to the solution fold
 dotnet new -i .
 ```
 
-You can also just replace the `.` at the end of the command with the path to the folder that has the BlazorTemplate solution. You could also install the template from any directory by providing the full path in place of `.`. 
+You can also just replace the `.` at the end of the command with the path to the folder that has the MauiBlazorWebTemplate solution file. You could also install the template from any directory by providing the full path in place of `.`. 
 
 To use the template to create a new project, type:
 
