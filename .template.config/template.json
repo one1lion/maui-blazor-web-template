@@ -4,10 +4,10 @@
     // https://github.com/dotnet/dotnet-template-samples
     "$schema": "http://json.schemastore.org/template",
     "author": "Humberto Cruz-Oyola jr.",
-    "name": "MAUI and Blazor Web Combined Template",
+    "name": "MAUI and Blazor Web Combined",
 
     "generatorVersions": "[1.0.0.0-*)",
-    "description": "An empty project template for creating a Blazor application that has the appropriate Component Library, Shared Library, Blazor MAUI project, and Blazor Server project.",
+    "description": "An basic project template for creating a Blazor application that has the appropriate Component Library, Shared Library, Blazor MAUI project, and Blazor Server project.",
 
     "identity": "MauiBlazorWebTemplate",
     "shortName": "maui-blazor-web",
