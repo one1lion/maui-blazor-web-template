@@ -14,9 +14,7 @@ This project was setup following [Microsoft Documentation](https://docs.microsof
 The template is setup to be able to create a new solution that contains all of the Blazor Web projects, the MAUI project, and a Shared Class and Component library. The Component Library has all of the routable pages and shared components used as the UI for all of the other project types. The Shared Class library contains all of the shared models and interfaces.
 
 # Getting Started
-As mentioned, this solution is intended to be installable as a Template to use to quickly build up an application that uses a combination of MAUI--for targetting Windows, Android, iOS, macOS, and Tizen--with a Blazor Component Library for the UI and the WASM and Server project types for Web.
-
-Use the DotNET CLI to install the template. First, navigate to the solution folder in a command prompt. Then type:
+As mentioned, this solution is intended to be installable as a Template to use to quickly build up an application that uses a combination of MAUI--for targetting Windows, Android, iOS, macOS, and Tizen--with a Blazor Component Library for the UI and the WASM and Server project types for Web.  First, clone or download the project to your local computer.  Then, install the template using the DotNET CLI by navigating to the solution folder in a command prompt. Then type:
 
 ```ps
 dotnet new -i .
