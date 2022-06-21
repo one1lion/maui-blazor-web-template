@@ -1,4 +1,5 @@
 ﻿using MauiBlazorWebTemplate.Services;
+using MauiBlazorWebTemplate.Shared.Extensions;
 using MauiBlazorWebTemplate.Shared.ServiceInterfaces;
 
 namespace MauiBlazorWebTemplate;
@@ -19,6 +20,9 @@ public static class MauiProgram
 #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
+        // Register and add services for shared using the extension method
+        // located in *.Shared/Extensions/ServiceExtensions.cs
+        builder.Services.AddSharedServices();
 
         builder.Services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
 
