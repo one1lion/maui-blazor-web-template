@@ -1,4 +1,5 @@
 using MauiBlazorWebTemplate.ServerOnly.Services;
+using MauiBlazorWebTemplate.Shared.Extensions;
 using MauiBlazorWebTemplate.Shared.ServiceInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+// Register and add services for shared using the extension method
+// located in *.Shared/Extensions/ServiceExtensions.cs
+builder.Services.AddSharedServices();
+
 builder.Services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
 
 var app = builder.Build();
