@@ -1,6 +1,6 @@
 # Introduction
 
-Visual Studio project templates are a great way to quickly create consistent projects. This template follows the same project structure outlined in the [general documentation](https://dev.azure.com/rmits/_git/Documentation?path=/ReadmeSections/Project-Structure-Info.md&version=GBmain&_a=preview). This solution is intended to be used to install the MAUI and Blazor Web Combined Template project type.
+Visual Studio project templates are a great way to quickly create consistent projects. This solution is intended to be used to install the MAUI and Blazor Web Combined Template project type.
 
 # Setup
 This project was setup following [Microsoft Documentation](https://docs.microsoft.com/en-us/visualstudio/ide/creating-project-and-item-templates?view=vs-2022) on creating project templates. It includes the following projects:
